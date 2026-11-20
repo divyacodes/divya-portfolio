@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --paper: #faf6ee;
+  --paper-2: #f4ede1;
+  --card: #fffcf7;
+  --ink: #2a1f17;
+  --body: #5a4c41;
+  --muted: #8b7b6c;
+  --line: #eadfcf;
+  --accent: #b5482a;
+  --accent-soft: #f5ddd1;
+  --grid: rgb(181 140 90 / 0.09);
+}
+.dark {
+  --paper: #14100d;
+  --paper-2: #1a1511;
+  --card: #1f1915;
+  --ink: #f4ebe0;
+  --body: #c8b9aa;
+  --muted: #8f8173;
+  --line: #352b23;
+  --accent: #e2795a;
+  --accent-soft: #3b231a;
+  --grid: rgb(226 121 90 / 0.05);
+}
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
