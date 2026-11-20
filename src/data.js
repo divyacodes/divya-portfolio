@@ -9,7 +9,7 @@ export const profile = {
   phone: "+91 8072511527",
   // TODO: replace with your real profile URLs
   linkedin: "https://www.linkedin.com/in/your-linkedin-id",
-  github: "https://github.com/your-github-id",
+  github: "https://github.com/divyacodes",
   resume: "/resume.pdf", // drop your resume PDF into /public as resume.pdf
   photo: "/profile.jpg",
   startDate: "2025-02-01", // used to show "x yrs y mos" on the profile card
