@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
-import { ArrowRight, Download, ChevronDown, Briefcase, GraduationCap } from "lucide-react";
+import { ArrowRight, Download, ChevronDown, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import { profile, stats, education } from "../data";
 import { GithubIcon } from "./Icons";
 import { ease } from "./ui";
@@ -37,7 +37,7 @@ function CountUp({ value }) {
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } } };
 const item = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } };
 
-const tech = ["ReactJS", "NodeJS", "Python", "PostgreSQL"];
+const tech = ["React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL"];
 
 export default function Hero() {
   return (
@@ -75,25 +75,26 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={item} className="mt-4 text-xl font-semibold text-body sm:text-2xl">
-            {profile.role} <span className="text-accent">{profile.tagline}</span>
+            {profile.role}
           </motion.p>
 
           <motion.p variants={item} className="mt-6 max-w-2xl text-base leading-[1.8] sm:text-lg">
-            1.8+ years of experience building multi-tenant SaaS applications using{" "}
+            1.8+ years of experience developing full-stack applications using{" "}
             {tech.map((t, i) => (
               <span key={t}>
                 <span className="font-medium text-ink">{t}</span>
                 {i < tech.length - 2 ? ", " : i === tech.length - 2 ? " and " : ""}
               </span>
             ))}
-            . Experienced in REST API development and responsive UI development — hands-on with performance
-            tuning, CI/CD and production deployments.
+            . Skilled in building RESTful APIs, developing responsive user interfaces, implementing backend
+            business logic, database management and multi-tenant SaaS solutions. Passionate about writing clean,
+            maintainable code and delivering efficient, scalable software solutions.
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href={profile.resume}
-              download
+              download="Divya_P_Resume.pdf"
               className="group inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30"
             >
               Resume <Download size={16} className="transition-transform group-hover:translate-y-0.5" />
@@ -144,42 +145,72 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="rounded-3xl border border-line bg-card p-2 shadow-[0_30px_60px_-25px_rgb(90_50_20/0.35)]"
+            className="relative overflow-hidden rounded-3xl border border-line bg-card shadow-[0_30px_60px_-25px_rgb(90_50_20/0.35)]"
           >
-            <div className="overflow-hidden rounded-2xl">
-              <motion.img
-                src={profile.photo}
-                alt={profile.name}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6 }}
-                className="aspect-square w-full object-cover object-[50%_25%]"
-              />
+            {/* soft accent banner behind the photo */}
+            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-br from-accent/25 via-accent/10 to-transparent" />
+
+            <div className="relative flex flex-col items-center px-6 pt-8 pb-6 text-center">
+              {/* round photo with a slowly rotating accent ring */}
+              <div className="relative h-36 w-36">
+                <motion.div
+                  aria-hidden
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, var(--accent), transparent 35%, var(--accent) 60%, transparent 85%, var(--accent))",
+                  }}
+                />
+                <div className="absolute inset-[3px] overflow-hidden rounded-full border-4 border-card bg-card">
+                  <motion.img
+                    src={profile.photo}
+                    alt={profile.name}
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.6 }}
+                    className="h-full w-full object-cover object-[50%_22%]"
+                  />
+                </div>
+                <span className="absolute -bottom-2 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-line bg-card px-2.5 py-1 text-[11px] font-medium whitespace-nowrap text-ink shadow-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                  </span>
+                  Open to work
+                </span>
+              </div>
+
+              <h2 className="mt-6 font-serif text-2xl font-semibold text-ink">{profile.name}</h2>
+              <p className="mt-1 text-sm font-medium text-accent">{profile.role}</p>
+              <p className="mt-2 inline-flex items-center gap-1 text-xs text-muted">
+                <MapPin size={12} /> Chennai, India
+              </p>
             </div>
-            <div className="divide-y divide-line px-3">
+
+            <div className="relative space-y-2 border-t border-line p-3">
               {[
                 {
                   Icon: Briefcase,
-                  eyebrow: "Currently",
-                  title: profile.role,
-                  sub: "Appilite Inc. · PropertyAutomate",
-                  meta: `${tenure(profile.startDate)} · Chennai`,
+                  title: "Appilite Inc. · PropertyAutomate",
+                  sub: tenure(profile.startDate),
                 },
                 {
                   Icon: GraduationCap,
-                  eyebrow: "Education",
-                  title: education.degree,
-                  sub: education.school,
+                  title: education[0].degree,
+                  sub: education[0].school,
                 },
-              ].map(({ Icon, eyebrow, title, sub, meta }) => (
-                <div key={eyebrow} className="flex gap-3 py-4">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-line bg-accent-soft text-accent">
-                    <Icon size={16} />
+              ].map(({ Icon, title, sub }) => (
+                <div
+                  key={title}
+                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-accent-soft"
+                >
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent-soft text-accent">
+                    <Icon size={15} />
                   </span>
-                  <div className="min-w-0">
-                    <p className="font-mono text-[10px] tracking-[0.2em] text-muted uppercase">{eyebrow}</p>
-                    <p className="mt-0.5 text-sm font-semibold text-ink">{title}</p>
-                    <p className="text-sm font-medium text-accent">{sub}</p>
-                    {meta && <p className="mt-0.5 text-xs text-muted">{meta}</p>}
+                  <div className="min-w-0 text-left">
+                    <p className="truncate text-[13px] font-semibold text-ink">{title}</p>
+                    <p className="truncate text-xs text-muted">{sub}</p>
                   </div>
                 </div>
               ))}

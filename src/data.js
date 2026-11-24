@@ -2,8 +2,7 @@
 
 export const profile = {
   name: "Divya P",
-  role: "Software Developer",
-  tagline: "building multi-tenant SaaS products.",
+  role: "Associate Software Developer",
   location: "Chennai, Tamil Nadu, India",
   email: "divya.p4202@gmail.com",
   phone: "+91 8072511527",
@@ -19,69 +18,109 @@ export const stats = [
   { value: "1.8+", label: "Years building SaaS in production" },
   { value: "35+", label: "Tools & technologies used" },
   { value: "3", label: "Backend stacks: Node, Fastify, FastAPI" },
-  { value: "2", label: "Full-stack MERN side projects" },
+  { value: "2", label: "Full-stack side projects (PERN & MERN)" },
 ];
 
 export const about = {
+  // Wrap text in **double asterisks** to highlight it in the accent colour.
   paragraphs: [
-    "I build web applications end to end — from PostgreSQL schemas and REST APIs to the React screens people use every day. At Appilite, working for PropertyAutomate, I ship features for a multi-tenant SaaS platform and see them through to production.",
-    "I enjoy turning Figma designs into clean, reusable components, and I'm just as comfortable on the backend — securing apps with JWT, processing report jobs from a RabbitMQ queue, or wiring up real-time messaging.",
-    "I also lean on AI-assisted tools like Claude and Cursor to move faster while keeping code readable and well-tested.",
+    "I am an **Associate Software Developer** with **1.8+ years of experience** building and maintaining scalable **multi-tenant SaaS applications**. At Appilite, working with PropertyAutomate, I develop end-to-end application features using **ReactJS, NodeJS, Fastify and PostgreSQL**, focusing on secure, efficient and maintainable solutions.",
+    "My experience includes developing **RESTful APIs**, building responsive user interfaces with **ReactJS and Material UI**, implementing secure authentication using **JWT and Role-Based Access Control (RBAC)**, and managing relational databases. I have also worked on **Python FastAPI services**, automated report generation and real-time messaging functionality.",
+    "I have hands-on experience with **RabbitMQ, WebSockets, Git Flow, Jenkins CI/CD and Docker**, contributing to application releases and production deployments on **Oracle Cloud**. I enjoy solving technical challenges, improving application performance and collaborating with cross-functional teams to deliver reliable software solutions.",
   ],
+  highlightsTitle: "Professional Highlights",
   highlights: [
-    "Based in Chennai, India — working as a Software Developer since Feb 2025.",
-    "Full-stack focus: ReactJS on the frontend, NodeJS, Fastify and Python services with PostgreSQL on the backend.",
-    "Hands-on with releases: Git Flow, Jenkins CI/CD and Docker deployments on Oracle Cloud.",
-    "Comfortable in Agile teams, collaborating closely with QA and product to ship on time.",
+    "Based in Chennai, India — working as an Associate Software Developer since February 2025.",
+    "Full-stack development experience across **ReactJS, NodeJS, ExpressJS, Fastify and PostgreSQL**.",
+    "Developed secure authentication services using **JWT, bcrypt and Role-Based Access Control (RBAC)**.",
+    "Built **Python FastAPI services** for Excel/PDF report generation and RabbitMQ-based background processing.",
+    "Developed **real-time messaging** with instant message delivery, conversation management and chat history.",
+    "Hands-on experience with **Git, GitHub, Docker, Jenkins CI/CD and Oracle Cloud deployments**.",
+    "Experienced in Agile development, team collaboration and delivering production-ready features.",
   ],
 };
 
 export const experience = [
   {
-    role: "Software Developer",
+    role: "Associate Software Developer",
     company: "Appilite Inc. Pvt Ltd",
     client: "PropertyAutomate Pvt Ltd",
     period: "Feb 2025 — Present",
     location: "Chennai, India",
+    // Wrap text in **double asterisks** to highlight it in the accent colour.
     groups: [
       {
-        title: "Product features",
-        badge: "React · Node",
+        title: "Full Stack SaaS Development",
+        badge: "React · Node · PostgreSQL",
         points: [
-          "Developed and maintained scalable features for a multi-tenant SaaS application using ReactJS, NodeJS, and PostgreSQL.",
-          "Converted Figma designs into responsive React screens and reusable UI components, and built RESTful APIs in NodeJS to connect them with the backend.",
+          "Developed and maintained scalable **multi-tenant SaaS applications** using ReactJS, NodeJS and PostgreSQL, delivering end-to-end features across multiple application modules with a focus on performance and maintainability.",
         ],
       },
       {
-        title: "Authentication & access",
-        badge: "Fastify · JWT",
+        title: "Frontend Development & UI Engineering",
+        badge: "React · Material UI",
         points: [
-          "Enhanced a central Fastify authentication service using JWT to provide secure login and access control across all client apps.",
+          "Converted **Figma designs** into responsive user interfaces using ReactJS and Material UI. Built reusable components and integrated backend APIs to deliver consistent and user-friendly application experiences.",
         ],
       },
       {
-        title: "Reporting & queues",
-        badge: "FastAPI · RabbitMQ",
+        title: "Backend Development & API Integration",
+        badge: "Node · Fastify",
         points: [
-          "Developed Excel and PDF revenue summary reports in a Python (FastAPI) service processing jobs from a RabbitMQ queue, with company-level filtering and multi-currency support.",
+          "Designed and developed **RESTful APIs** using NodeJS and Fastify, implementing backend business logic, data validation and database operations to support application workflows.",
         ],
       },
       {
-        title: "Real-time messaging",
-        badge: "WebSocket",
+        title: "Authentication & Access Control",
+        badge: "JWT · bcrypt · RBAC",
         points: [
-          "Developed real-time messaging functionality with instant message delivery, conversation management, and chat history.",
+          "Enhanced centralized authentication services using **JWT and bcrypt**, implementing secure login and **Role-Based Access Control (RBAC)** across multiple client applications.",
         ],
       },
       {
-        title: "Delivery & releases",
+        title: "Python & Report Automation",
+        badge: "Python · FastAPI",
+        points: [
+          "Developed **Python FastAPI services** for automated Excel and PDF revenue reports, incorporating company-level filtering and multi-currency support.",
+        ],
+      },
+      {
+        title: "Background Job Processing",
+        badge: "RabbitMQ",
+        points: [
+          "Integrated **RabbitMQ** for asynchronous report generation and background job processing, enabling efficient execution of resource-intensive tasks.",
+        ],
+      },
+      {
+        title: "Real-Time Messaging",
+        badge: "WebSockets",
+        points: [
+          "Developed real-time messaging functionality using **WebSockets**, supporting instant message delivery, conversation management and chat history.",
+        ],
+      },
+      {
+        title: "Database Management",
+        badge: "PostgreSQL · MySQL",
+        points: [
+          "Worked with **PostgreSQL and MySQL** for database operations, query handling, data retrieval and application-level data management.",
+        ],
+      },
+      {
+        title: "CI/CD & Cloud Deployment",
         badge: "Jenkins · Docker",
         points: [
-          "Managed releases and deployments using Git Flow, Jenkins CI/CD, and Docker on Oracle Cloud, working with QA and product teams in an Agile setup to deliver releases on time.",
+          "Managed development workflows using **Git and Git Flow**, and supported automated builds and deployments using **Jenkins CI/CD and Docker** on Oracle Cloud.",
+        ],
+      },
+      {
+        title: "Agile Collaboration",
+        badge: "Agile",
+        points: [
+          "Collaborated with **QA, product and development teams** in an Agile environment, contributing to feature development, debugging, testing and timely production releases.",
         ],
       },
     ],
-    tags: ["React", "Node.js", "PostgreSQL", "Fastify", "FastAPI", "RabbitMQ", "JWT", "Docker", "Jenkins", "Oracle Cloud"],
+    tags: ["React", "Material UI", "Node.js", "Fastify", "PostgreSQL", "MySQL", "FastAPI", "RabbitMQ", "WebSockets", "JWT", "Git", "Docker", "Jenkins", "Oracle Cloud"],
   },
 ];
 
@@ -93,33 +132,56 @@ export const projects = [
     icon: "layers",
     description:
       "A multi-tenant SaaS application that lets multiple organizations securely manage their own users, data, and workflows within a single shared platform.",
-    stack: ["MongoDB", "Express", "React", "Node.js"],
+    badge: "PERN",
+    stack: ["React", "Material UI", "Node.js", "Express", "PostgreSQL", "JWT", "Zod", "Swagger", "Vitest", "Docker"],
     github: "", // add repo URL
     live: "", // add live demo URL
   },
   {
-    title: "Verified PG Vacancy Platform",
-    subtitle: "Accommodation finder",
+    title: "Stayzy",
+    subtitle: "Verified rental & PG finder",
     label: "Personal project",
     icon: "building",
     description:
-      "A platform that helps users find verified PG accommodations by location and budget, while allowing owners to list vacancies and get them approved.",
-    stack: ["MongoDB", "Express", "React", "Node.js"],
+      "A rental platform that helps users find verified PGs, houses and apartments by location and budget, while allowing owners to list their vacancies and get them approved.",
+    badge: "MERN · TS",
+    stack: ["React", "TypeScript", "Tailwind CSS", "TanStack Query", "Zustand", "Node.js", "Express", "MongoDB", "Redis", "Leaflet / Mapbox", "Cloudinary", "Docker"],
     github: "",
     live: "",
   },
 ];
 
-export const education = {
-  degree: "B.Tech, Information Technology",
-  school: "KCG College of Technology",
-  location: "Chennai, India",
-  note: "Built multiple academic projects; participated in Code Relays and technical workshops.",
-};
+// First entry is also shown on the profile card in the hero.
+export const education = [
+  {
+    level: "Undergraduate",
+    degree: "B.Tech, Information Technology",
+    school: "KCG College of Technology",
+    location: "Chennai, India",
+    note: "Built multiple academic projects; participated in Code Relays and technical workshops.",
+  },
+  {
+    level: "Higher Secondary",
+    degree: "Computer Science with Mathematics",
+    school: "Hilton Matriculation and Higher Secondary School",
+    location: "Old Courtallam, Tenkasi",
+  },
+];
 
 export const certifications = [
   {
     title: "Full Stack Java Programming",
     issuer: "Credo Systemz",
+    date: "Aug 2024",
+    // Drop the certificate image into /public/certificates with this name
+    image: "/certificates/credo-java.jpg",
+    credential: "", // add certificate URL to show a "Show credential" link
+  },
+  {
+    title: "Full Stack with Python Programming",
+    issuer: "HCL GUVI",
+    date: "Oct 2023",
+    image: "/certificates/guvi-python.jpg",
+    credential: "https://www.guvi.in/certificate?id=89792v626HUfJ1m329",
   },
 ];

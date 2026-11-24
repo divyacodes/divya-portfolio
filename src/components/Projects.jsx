@@ -33,7 +33,7 @@ export default function Projects() {
                   className="absolute -right-4 -bottom-6 h-36 w-36 text-accent/15 transition-transform duration-700 group-hover:-rotate-6 group-hover:scale-110"
                 />
                 <span className="absolute top-4 right-4 rounded-full border border-accent/30 bg-card/80 px-2.5 py-0.5 font-mono text-[11px] text-accent">
-                  MERN
+                  {p.badge}
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-6">

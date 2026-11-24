@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { experience } from "../data";
-import { Reveal, Section, SectionTitle, Tag } from "./ui";
+import { Reveal, Section, SectionTitle, Tag, highlight } from "./ui";
 
 function Timeline({ job }) {
   const ref = useRef(null);
@@ -36,7 +36,7 @@ function Timeline({ job }) {
                 {g.points.map((p, i) => (
                   <li key={i} className="flex gap-3 text-[15px] leading-relaxed">
                     <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-muted" />
-                    {p}
+                    <span>{highlight(p)}</span>
                   </li>
                 ))}
               </ul>

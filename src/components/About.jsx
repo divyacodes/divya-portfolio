@@ -1,21 +1,6 @@
 import { motion } from "framer-motion";
 import { about } from "../data";
-import { Reveal, Section, SectionTitle } from "./ui";
-
-const accentWords = ["multi-tenant SaaS platform", "production", "JWT", "RabbitMQ queue", "real-time messaging"];
-
-function highlight(text) {
-  const re = new RegExp(`(${[...accentWords, "Appilite", "PropertyAutomate"].join("|")})`, "g");
-  return text.split(re).map((part, i) =>
-    accentWords.includes(part) ? (
-      <span key={i} className="text-accent">{part}</span>
-    ) : part === "Appilite" || part === "PropertyAutomate" ? (
-      <span key={i} className="text-ink">{part}</span>
-    ) : (
-      part
-    )
-  );
-}
+import { Reveal, Section, SectionTitle, highlight } from "./ui";
 
 export default function About() {
   return (
@@ -29,7 +14,9 @@ export default function About() {
             </Reveal>
           ))}
         </div>
-        <ul className="space-y-5">
+        <div>
+        <h3 className="mb-6 font-mono text-xs tracking-[0.2em] text-ink uppercase">{about.highlightsTitle}</h3>
+        <ul className="space-y-4">
           {about.highlights.map((h, i) => (
             <motion.li
               key={i}
@@ -40,10 +27,11 @@ export default function About() {
               className="flex gap-3 text-[15px] leading-relaxed"
             >
               <span className="mt-0.5 text-accent">▹</span>
-              {h}
+              <span>{highlight(h)}</span>
             </motion.li>
           ))}
         </ul>
+        </div>
       </div>
     </Section>
   );

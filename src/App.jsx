@@ -22,7 +22,7 @@ export default function App() {
         <Contact />
       </main>
       <footer className="border-t border-line py-8 text-center text-sm text-muted">
-        © {new Date().getFullYear()} {profile.name} · Built with React &amp; Framer Motion
+        © {new Date().getFullYear()} {profile.name}
       </footer>
     </>
   );

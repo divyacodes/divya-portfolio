@@ -44,8 +44,8 @@ export default function Contact() {
         />
         <Reveal delay={0.2}>
           <p className="mt-7 text-[17px] leading-[1.8]">
-            I'm open to new opportunities and would love to hear from teams building SaaS products, web platforms or
-            interesting full-stack problems. Based in Chennai, open to remote or on-site roles.
+            I am open to new career opportunities and excited to take on new challenges where I can apply my technical
+            skills, contribute to team success and continue growing professionally.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a

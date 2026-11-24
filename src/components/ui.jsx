@@ -48,7 +48,7 @@ export function SectionTitle({ children }) {
 
 export function Section({ id, alt = false, children }) {
   return (
-    <section id={id} className={`scroll-mt-24 py-24 sm:py-28 ${alt ? "bg-paper-2" : ""}`}>
+    <section id={id} className={`scroll-mt-20 pt-6 pb-12 sm:pt-8 sm:pb-14 ${alt ? "bg-paper-2" : ""}`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">{children}</div>
     </section>
   );
@@ -57,5 +57,18 @@ export function Section({ id, alt = false, children }) {
 export function Tag({ children }) {
   return (
     <span className="rounded-md border border-line bg-paper-2 px-2.5 py-1 text-xs text-body">{children}</span>
+  );
+}
+
+// **text** → accent colour; company names → bright ink.
+export function highlight(text) {
+  return text.split(/(\*\*[^*]+\*\*|Appilite|PropertyAutomate)/g).map((part, i) =>
+    part.startsWith("**") ? (
+      <span key={i} className="font-medium text-accent">{part.slice(2, -2)}</span>
+    ) : part === "Appilite" || part === "PropertyAutomate" ? (
+      <span key={i} className="text-ink">{part}</span>
+    ) : (
+      part
+    )
   );
 }
