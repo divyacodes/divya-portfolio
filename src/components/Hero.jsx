@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
-import { ArrowRight, Download, ChevronDown, Briefcase, GraduationCap, MapPin } from "lucide-react";
+import { ArrowRight, Download, Eye, ChevronDown, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import { profile, stats, education } from "../data";
 import { GithubIcon } from "./Icons";
 import { ease } from "./ui";
@@ -92,13 +92,26 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
-            <a
-              href={profile.resume}
-              download="Divya_P_Resume.pdf"
-              className="group inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30"
-            >
-              Resume <Download size={16} className="transition-transform group-hover:translate-y-0.5" />
-            </a>
+            {/* View opens the PDF in a new tab; the icon button downloads it */}
+            <div className="inline-flex overflow-hidden rounded-xl bg-accent text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30">
+              <a
+                href={profile.resume}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 px-5 py-3 transition-colors hover:bg-white/10"
+              >
+                <Eye size={16} /> View Resume
+              </a>
+              <a
+                href={profile.resume}
+                download="Divya_P_Resume.pdf"
+                aria-label="Download resume"
+                title="Download resume"
+                className="group inline-flex items-center border-l border-white/25 px-3.5 py-3 transition-colors hover:bg-white/10"
+              >
+                <Download size={16} className="transition-transform group-hover:translate-y-0.5" />
+              </a>
+            </div>
             <a
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-xl border border-accent/40 px-5 py-3 text-sm font-semibold text-accent transition hover:-translate-y-0.5 hover:bg-accent-soft"
