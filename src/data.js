@@ -6,8 +6,7 @@ export const profile = {
   location: "Chennai, Tamil Nadu, India",
   email: "divya.p4202@gmail.com",
   phone: "+91 8072511527",
-  // TODO: replace with your real profile URLs
-  linkedin: "https://www.linkedin.com/in/your-linkedin-id",
+  linkedin: "https://www.linkedin.com/in/divya-p-1717a023b/",
   github: "https://github.com/divyacodes",
   resume: "/resume.pdf", // drop your resume PDF into /public as resume.pdf
   photo: "/profile.jpg",
